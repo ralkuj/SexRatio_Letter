@@ -37,7 +37,7 @@ nrcores <- 50
 ### In this simulation the spouses of the men are ignored. 
 
 ### Load
-#load('~/Sex ratio/Familiality_of_offspring_sex_cousinpairs_20190116.Rdata')
+load('~/Sex ratio/Familiality_of_offspring_sex_cousinpairs_20190116.Rdata')
 
 # Remove twins in offspring generation
 dat <- dat[ dat$nrbornsamedate==1 & dat$nrbornsamedate2==1 , ]
