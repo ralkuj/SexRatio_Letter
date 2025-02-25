@@ -23,7 +23,7 @@
 library(parallel)
 
 ### Nr cores used
-nrcores <- 20
+nrcores <- 50
 
 ############################################
 
