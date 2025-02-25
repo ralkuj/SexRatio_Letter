@@ -4,6 +4,11 @@ Song S, Zhang J. In search of the genetic variants of human sex ratio at birth: 
 Which includes a critique of the conclusions from paper 
 Zietsch BP, Walum H, Lichtenstein P, Verweij KJH, Kuja-Halkola R. No genetic contribution to variation in human offspring sex ratio: a total population study of 4.7 million births. Proc Biol Sci. 2020;287(1921):20192849. DOI: 10.1098/rspb.2019.2849
 
+Software version used:
+R version 4.3.2 (2023-10-31)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Red Hat Enterprise Linux 9.4 (Plow)
+
 The simulations in first two files (01 and 02) are free of external data. The simulation in last file (04) uses data on family structure from Zietsch et al, data cannot be shared openly.
 
 Files and short description:
