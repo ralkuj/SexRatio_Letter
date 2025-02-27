@@ -32,7 +32,7 @@ nrcores <- 50
 
 ############################################
 ### The simulation from Song&Zhang translated into R functions
-### The code is adopted from accompanying code to Song & Zhang, accessed 2025-02-25:
+### The code is adapted from accompanying code to Song & Zhang, accessed 2025-02-25:
 ### https://github.com/song88180/Human_sex_ratio/blob/main/02.2_Zietsch_power_analysis.ipynb
 ### Some comments below kept from Song&Zhang
 
