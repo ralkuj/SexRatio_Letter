@@ -25,6 +25,9 @@ Files and short description:
 04.SexRatio_simulations_Normal_liability_20250225.R
 - Performs a simulation using the relative structure from Zietsch et al to find statistical power for detecting non-null heritability under assumed model with offspring sex allocation drawn from a bernoulli ditribution with probability distributed according to a normal distribution centered aroun 0.5 and varying variance. The variances include the variance used in Song&Zhang, but also smaller and larger variances.
 
+05.SZ_SLiM_Plotting.R
+- Plots Song and Zhang's SLiM Fisher's Principle simulation results.
+
 Simulation results:
 SimulationSNP_1000repeats_SongOriginal_wrong_pval_20241105.Rds
 - Simulation  results based on Song&Zhangs original simulation with incorrect p-value threshold. Produced in 01.SNP_simulations_Song&Zhang_20250225.R.
@@ -40,3 +43,9 @@ SimulationSNP_male_firstborn_1000repeats_Song_20241105.Rds
 
 Simulation_Realdata_Male_1000repeats_20241107.Rds
 - Simulation mirroring the Zietsch et al paper, using known family structure, for different assumed variances of offspring sex probability. Produced in 04.SexRatio_simulations_Normal_liability_20250225.R.
+
+SongZhang-original_(height_sims)summary.tsv
+- Song & Zhang's original height simulations results.
+
+SongZhang-original_Simulation_SLiM_human_directional_combined.csv
+- Song & Zhang's original SLiM Fisher's Principle simulation results (combined per the script 05.SZ_SLiM_Plotting).
