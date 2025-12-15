@@ -125,4 +125,33 @@ steps <- data.frame(mr = factor(c(1e-06, 1e-05, 1e-04, 1e-03, 1e-02)), ms = fact
       axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels if needed
     )
   
+#### Checking the h2 values against the 95%CI ####  
+  
+# Summarise European h2 values for each mr and ms combination
+h2_summary <- simulation_data %>%
+  select(mr, ms, Herit_European) %>%
+  arrange(mr, ms)
+
+# Create a wide format table with mr as rows and ms as columns
+h2_wide <- simulation_data %>%
+  select(mr, ms, Herit_European) %>%
+  pivot_wider(names_from = ms, values_from = Herit_European, names_prefix = "ms_")
+
+# Add flag column to identify h2 values < 0.00038 (upper 95CI threshold)
+h2_summary_flagged <- simulation_data %>%
+  select(mr, ms, Herit_European) %>%
+  mutate(below_threshold = ifelse(Herit_European < 0.00038, "*", "")) %>%
+  arrange(mr, ms)
+
+# Create wide format with asterisks marking values < 0.00038
+h2_wide_flagged <- simulation_data %>%
+  select(mr, ms, Herit_European) %>%
+  mutate(h2_display = ifelse(Herit_European < 0.00038, 
+                              paste0(format(Herit_European, scientific = FALSE), "*"),
+                              format(Herit_European, scientific = FALSE))) %>%
+  select(mr, ms, h2_display) %>%
+  pivot_wider(names_from = ms, values_from = h2_display, names_prefix = "ms_")
+
+print(h2_wide_flagged)
+
   
