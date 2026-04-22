@@ -1,6 +1,7 @@
-Code related to the letter rebutting some of the conclusions in the article
+Code related to the Brief Report
+Harper K, Kuja-Halkola R, Verweij KJH, Magnusson PKE, Zietsch BP. No Evidence of Genetic Basis to Variation in Human Offspring Sex Ratio. Beh Gen.
+Rebutting some of the conclusions in the article
 Song S, Zhang J. In search of the genetic variants of human sex ratio at birth: was Fisher wrong about sex ratio evolution? Proc Biol Sci. Oct 2024;291(2033):20241876. doi:10.1098/rspb.2024.1876
-
 Which includes a critique of the conclusions from paper 
 Zietsch BP, Walum H, Lichtenstein P, Verweij KJH, Kuja-Halkola R. No genetic contribution to variation in human offspring sex ratio: a total population study of 4.7 million births. Proc Biol Sci. 2020;287(1921):20192849. DOI: 10.1098/rspb.2019.2849
 
@@ -9,17 +10,17 @@ R version 4.3.2 (2023-10-31)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Red Hat Enterprise Linux 9.4 (Plow)
 
-The simulations in first two files (01 and 02) are free of external data. The simulation in last file (04) uses data on family structure from Zietsch et al, data cannot be shared openly.
+The simulations in first files (01.SNP_simulations_Song&Zhang_20250225.R) is free of external data. The simulation in sexond and last file (02.SNP_simulations_FamilyStructure_20251209.R and 04.SexRatio_simulations_Normal_liability_20250225.R) uses data on family structure from Zietsch et al, data cannot be shared openly.
 
 Files and short description:
 
 01.SNP_simulations_Song&Zhang_20250225.R
 - Implements the simulation from Song&Zhang to estimate the statistical power to detect a non-zero heritability olf offspring sex-ratio. Implements the original wrong p-value threshold by Song&Zhang  of 5e-8 and a correct threshold of 0.05.
 
-02.SNP_simulations_Song&Zhang_sex-specific_20250525.R
-- Implements a version of Song&Zhang simulation where parental sex is not random. Uses sample sizes from Zietsch et al to yield power calculations that are trustworthy. First all male-male siblings' offspring simulated, then firstborn to all male-male siblings.
+02.SNP_simulations_FamilyStructure_20251209.R
+- Implements the one SNP approach of Song&Zhang, but using real family structure from Zietsch et al. This yield power calculations that are trustworthy. First all male-male siblings' offspring simulated, then firstborn to all male-male siblings.
 
-03.SNP_simulations_Plotting_20250225.R
+03.SNP_simulations_Plotting_20251210.R
 - Plots the above simulations.
 
 04.SexRatio_simulations_Normal_liability_20250225.R
@@ -35,11 +36,13 @@ SimulationSNP_1000repeats_SongOriginal_wrong_pval_20241105.Rds
 SimulationSNP_1000repeats_SongOriginal_correct_pval_20241105.Rds
 - Simulation based on Song&Zhangs original simulation with correct p-value threshold.  Produced in 01.SNP_simulations_Song&Zhang_20250225.R.
 
-SimulationSNP_male_all_1000repeats_Song_20241105.Rds
-- Simulation based on variation of Song&Zhangs simulation, using one known parental sex (males) and all offspring. Produced in 02.SNP_simulations_Song&Zhang_sex-specific_20250525.R.
+SimulationSNP_FamilyStructure_male_All_1000repeats_20251209.Rds
+SimulationSNP_FamilyStructure_male_All_Xtra0075_1000repeats_20251209.Rds
+- Simulation based on Song&Zhangs one SNP approach, using one known family structure and all offspring. Produced in 02.SNP_simulations_FamilyStructure_20251209.R.
 
-SimulationSNP_male_firstborn_1000repeats_Song_20241105.Rds
-- Simulation based on variation of Song&Zhangs simulation, using one known parental sex (males) using only first-born offspring. Produced in 02.SNP_simulations_Song&Zhang_sex-specific_20250525.R.
+SimulationSNP_FamilyStructure_male_First_1000repeats_20251209.Rds
+SimulationSNP_FamilyStructure_male_First_Xtra0075_1000repeats_20251209.Rds
+- Simulation based on Song&Zhangs one SNP approach, using one known family structure and only first-born offspring. Produced in 02.SNP_simulations_FamilyStructure_20251209.R.
 
 Simulation_Realdata_Male_1000repeats_20241107.Rds
 - Simulation mirroring the Zietsch et al paper, using known family structure, for different assumed variances of offspring sex probability. Produced in 04.SexRatio_simulations_Normal_liability_20250225.R.
