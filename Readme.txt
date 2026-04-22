@@ -12,7 +12,6 @@ Running under: Red Hat Enterprise Linux 9.4 (Plow)
 
 The simulations in first files (01.SNP_simulations_Song&Zhang_20250225.R) is free of external data. The simulation in sexond and last file (02.SNP_simulations_FamilyStructure_20251209.R and 04.SexRatio_simulations_Normal_liability_20250225.R) uses data on family structure from Zietsch et al, data cannot be shared openly.
 
-During review, the approach in 02.SNP_simulations_FamilyStructure_20251209.R changed, so the files were updated. Old approach is saved for transparency. The files below are the ones used for publication.
 
 Files and short description:
 
